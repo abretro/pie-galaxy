@@ -16,13 +16,16 @@ The default password is raspberry, the IP address can be found in the RetroPie m
 
 ### Windows
 
-Follow the [official documentation :D](https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md)
+Use putty, follow the [raspberrypi.org documentation :D](https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md)
+
 
 ## Installing
 
 You need to make sure you have a recent retropie-setup version.
+
 The install script requires commit 872e2ae or newer, from february 27, 2019.
-If you have an older version update the retropie-setup script first.
+
+If you have an older version, update the retropie-setup script first.
 
 Download the packagefile
 
@@ -36,13 +39,14 @@ Follow the configuration steps before you disconnect from SSH
 
 ## Configuring
 
-Currently we need to logg in by going to an URL in your webbrowser, then copy pasting a token back.
+Currently we need to login by going to an URL in your webbrowser, copy a
+token, and pasting it back.
 
     /opt/retropie/ports/piegalaxy/wyvern ls
 
-Copy the URL to your webbrowser, and log in. After you logg in you will get to a blank site
-The token is in the URL of the webbrowser, copy everything after code= and paste it back into the SSH client.
+Copy the URL to your webbrowser, go to it. After you log in you will get to a blank
+site.  The token is in the URL, copy everything after code= and paste it back into the SSH client.
 
 If you managed to do it correctly, you should see a list of all your games.
 
-Restart EmulationStation, or Reboot, and the program will show up in EmulationStation under Ports.
+Restart EmulationStation, or Reboot RetroPie, and the program will show up in EmulationStation under Ports.

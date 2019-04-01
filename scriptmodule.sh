@@ -10,7 +10,7 @@
 #
 
 rp_module_id="piegalaxy"
-rp_module_desc="Pie Galaxy - Downloand and install GOG.com games in RetroPie"
+rp_module_desc="Pie Galaxy - Downloads and installs GOG.com (Classic DOS) games for usage in RetroPie"
 rp_module_licence="GPL https://github.com/sigboe/pie-galaxy/blob/master/LICENSE"
 rp_module_section="exp"
 

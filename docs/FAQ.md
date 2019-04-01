@@ -1,36 +1,41 @@
 # Frequently Asked Questions
 
-## Your code is bad and you should feel bad
 
-This may be a valid point. If you care to elaborate, please open an issue and explain how I can improve.
+## How do I select a file to install?  (I can see them in a list)
 
-## I can't I select a file to install
+The ncurses filemanager expects the cursor to be moved to highlight a file name.  Once the file you want to install is highlighted, press the spacebar on the keyboard or the back button on the game pad (defaults are 'X' on Playstation controllers or 'B' on Nintendo style)
 
-Its the ncurses filemanager that expects you to move the cursor to a file and press `Space`.
+## How can I see the installed games in the EmulationStation menus?
 
-To do this ona a game pad I found it most convenient to press up a few times until you get to the file, and press the `Back` button on the gamepad (defaults to `X` on PS, or `B` on Nintendo)
+Emulation station must be restarted to pickup any new game installed in RetroPie.  This includes the GOG games installed by pie-galaxy.
 
-## I can't see the games I installed in EmulationStation
-
+To restart Emulation Station, from the gamepad:
 `Start` > `Quit` > `Restart EmulationStation`
 
-## I cant start the ScummVM game I just installed
+## How do I start the ScummVM game that I just installed and am trying to start from EmulationStation?
 
-Open up the ScummVM GUI and add the game. The shortcut in EmulationStation should work now.
+Try using the lr-scummvm as it doesn't need this.  Otherwise, run the ScummVM GUI and add the game.  The shortcut in EmulationStation should now function correctly.  
 
-## Gamepad in ScummVM games is erratic
+## Why is the gamepad erratic in ScummVM games?
 
-Yes, if you get the lr-scummvm instead, it you get improvements like better gamepad support, and you don't need to add games in the GUI after you install them.
+Try using the lr-scummvm instead.   It has improvements like better gamepad support.
 
-## There symbols displayed like ~D in my game list
+## Why are symbols like '~D' in the game list?
 
-This is due to RetroPie not being configured to use UTF-8. Looking into different ways to handle this.
-If you want you can set the variables LC_ALL and LANGUAGE in your .bashrc file, but a program like this should not do such a thing for you.
+This is due to RetroPie not being configured to use UTF-8. 
 
-## There is no progress bar while downloading
+You can run "dpkg reconfigure-locales", select the language(s) you want the system to support and a language that will be default.  Be sure to select a default with UTF-8 support, such as "en_US.UTF"
 
-This bug is only on RetroPie, looking into it.
+As an alternative to setting the default lanaguye, the variables LC_ALL and LANGUAGE can be set in .bashrc for the user to support a UTF language.
 
-## There is a `not a tty` file
+## Why isn't there a progress bar while downloading?
 
-Known bug, its harmless. I will fix it, its just not a top priority bug.
+This seems to be a bug that only appears on RetroPie.  It is being looked at.
+
+## Why is something checking for a tty, then displaying "not a tty"?
+
+Known bug, its harmless.  It will be fixed in an appropriate manner, but its not top priority compared to having functional games, etc.
+
+## Why isn't the author writhing in pain after my discovery of their horrific code?
+
+This may be a valid point.  If you care to elaborate, please open an issue.

@@ -4,8 +4,9 @@
 # https://github.com/sigboe/pie-galaxy/blob/master/LICENSE
 # shellcheck disable=SC2094 # Dirty hack avoid runcommand to steal stdout
 
-#Default settings don't edit as they will be overwritten when you update the program
-#set prefrences in ~/.config/piegalaxy/piegalaxy.conf
+# Default settings 
+# - Don't edit these as they will be overwritten whenever piegalaxy is updated
+# - Set preferences in ~/.config/piegalaxy/piegalaxy.conf
 title="Pie Galaxy"
 tmpdir="${HOME}/.cache/piegalaxy"
 downdir="${HOME}/Downloads"
@@ -32,7 +33,7 @@ fi
 
 if [[ -f "${configfile}" ]]; then
 	if grep -E -q -v '^#|^[^ ]*=[^;]*' "{$configfile}"; then
-		echo "Config file is unclean, cleaning it..." >&2
+		echo "Config file is dirty, cleaning it..." >&2
 		mv "${configfile}" "$(dirname "${configfile}")/dirty.conf" 
 		grep -E '^#|^[^ ]*=[^;&]*'  "$(dirname "${configfile}")/dirty.conf"  > "${configfile}"
 	fi
@@ -45,8 +46,7 @@ source "${exceptions}"
 
 _depends() {
 	if ! [[ -x "$(command -v dialog)" ]]; then
-		echo "dialog not installed." >"$(tty)"
-		sleep 10
+		echo "dialog not installed" >"$(tty)"
 		_exit 1
 	fi
 	if ! [[ -x "${wyvernbin}" ]]; then
